@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--引入jquery-->
+    <script th:src="@{libs/jquery/jquery-3.1.1.min.js}"></script>
+    <!--引入bootstrap-->
+    <link rel="stylesheet" th:href="@{libs/bootstrap/css/bootstrap.min.css}"/>
+    <script th:src="@{libs/bootstrap/js/bootstrap.min.js}"></script>
+    <!--引入sematicUI-->
+    <link rel="stylesheet" th:href="@{libs/SemanticUI2.2.4/semantic.min.css}"/>
+    <script th:src="@{libs/SemanticUI2.2.4/semantic.min.js}"></script>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div th:text="${userName}"></div>
+<div class="ui inverted segment">
+    <div th:each="e : ${vedios}" class="ui inverted relaxed divided list">
+        <div class="item">
+            <div th:text="${e.fileName}" class="content">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui labeled button" tabindex="0">
+    <div class="ui red button"><i class="heart icon"></i> Like</div>
+    <a class="ui basic red left pointing label">
+        1,048
+    </a>
+</div>
+<div class="ui labeled button" tabindex="0">
+    <div class="ui basic blue button"><i class="fork icon"></i> Forks</div>
+    <a class="ui basic left pointing blue label">
+        1,048
+    </a>
+</div>
+</body>
+</html>

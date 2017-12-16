@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--引入jquery-->
+    <script th:src="@{libs/jquery/jquery-3.1.1.min.js}"></script>
+    <!--引入bootstrap-->
+    <link rel="stylesheet" th:href="@{libs/bootstrap/css/bootstrap.min.css}"/>
+    <script th:src="@{libs/bootstrap/js/bootstrap.min.js}"></script>
+    <!--引入sematicUI-->
+    <link rel="stylesheet" th:href="@{libs/SemanticUI2.2.4/semantic.min.css}"/>
+    <script th:src="@{libs/SemanticUI2.2.4/semantic.min.js}"></script>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div th:text="${msg}"></div>
+<a th:href="${callBackUrl}">登陆连接</a>
+<div class="ui inverted segment">
+    <span>不能挑战可以以复制如下地址到浏览器：</span>
+    <span th:text="${callBackUrl}"></span>
+</div>
+</body>
+</html>
