@@ -35,7 +35,7 @@ public class App {
         logger.info("正在启动Java程序......");
         SpringApplication.run(App.class, args);
         //3.check after java application
-        //checkAfterJavaApplicationBoot();
+//        checkAfterJavaApplicationBoot();
 
     }
 
