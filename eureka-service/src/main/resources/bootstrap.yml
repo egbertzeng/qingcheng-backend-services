@@ -1,0 +1,34 @@
+#一、自定义变量，为了能够本地运行
+#ALL_SERVICE_RUN_HOST: localhost
+#EUREKA_SERVER_HOST: ${ALL_SERVICE_RUN_HOST}
+#EUREKA_SERVER_PORT: 8761
+#二、服务自身配置
+spring:
+  application:
+#    name: @project.artifactId@  #对应所获取的配置文件的{application}
+    name: eureka-service  #对应所获取的配置文件的{application}
+#  cloud:
+#    config:
+#      profile: dev
+#      label: master
+#      discovery:
+#        enabled: true                     # 默认false，设为true表示使用注册中心中的configserver配置而不自己配置configserver的uri
+#        serviceId: configuration-service  # 指定config server在服务发现中的serviceId，默认为：configserver
+#三、基础服务配置
+#1.eureka信息
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#    prefer-ip-address: true
+#    lease-renewal-interval-in-seconds: 50      # 心跳时间，即服务续约间隔时间（缺省为30s）
+#    lease-expiration-duration-in-seconds: 150  # 发呆时间，即服务续约到期时间（缺省为90s）
+  client:
+#    healthcheck:
+#      enabled: true   # 开启健康检查（依赖spring-boot-starter-actuator）
+    serviceUrl:
+      defaultZone: http://${EUREKA_SERVER_HOST_01:localhost}:${EUREKA_SERVER_PORT:8000}/eureka/
+
+
+
+
